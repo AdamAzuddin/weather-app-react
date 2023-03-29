@@ -15,8 +15,11 @@ const colors = [
   "purple",
 ];
 
-const SquareWidgets = () => {
+const name = [
+  "New York",
+];
 
+const SquareWidgets = () => {
   return (
     <ScrollContainer>
       <div
@@ -30,8 +33,8 @@ const SquareWidgets = () => {
         }}
         className="example"
       >
-        {colors.map((color, index) => (
-          <SquareWidget key={index} color={color} />
+        {colors.map((color, index ,) => (
+          <SquareWidget key={index} color={color} name={name}/>
         ))}
       </div>
     </ScrollContainer>
