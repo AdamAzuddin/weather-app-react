@@ -4,7 +4,7 @@ const SquareWidget = ({ color }) => {
   return (
     <div
       style={{
-        width: "100px",
+        width: "50%",
         height: "100px",
         backgroundColor: color,
         margin: "10px",

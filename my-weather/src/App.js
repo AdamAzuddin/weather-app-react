@@ -9,7 +9,7 @@ import SquareWidgets from "./components/SquareWidgets";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Header/>
       <Weather/>
       <SquareWidgets/>
