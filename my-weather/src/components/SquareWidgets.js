@@ -2,21 +2,20 @@ import React from "react";
 import SquareWidget from "./SquareWidget";
 import ScrollContainer from "react-indiana-drag-scroll";
 
-const colors = [
-  "red",
-  "green",
-  "blue",
-  "yellow",
-  "purple",
-  "red",
-  "green",
-  "blue",
-  "yellow",
-  "purple",
-];
 
-const name = [
+const names = [
   "New York",
+  "Kuala Lumpur",
+  "Bangkok",
+  "London",
+  "Doha",
+  "New York",
+  "Kuala Lumpur",
+  "Bangkok",
+  "London",
+  "Doha",
+  
+  
 ];
 
 const SquareWidgets = () => {
@@ -30,11 +29,12 @@ const SquareWidgets = () => {
           width: "200%",
           scrollbarWidth: "none",
           scrollbars: "0",
+          marginTop:'50px'
         }}
         className="example"
       >
-        {colors.map((color, index ,) => (
-          <SquareWidget key={index} color={color} name={name}/>
+        {names.map((name, index ,) => (
+          <SquareWidget key={index}  name={name}/>
         ))}
       </div>
     </ScrollContainer>

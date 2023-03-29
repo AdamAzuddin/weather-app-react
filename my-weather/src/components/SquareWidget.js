@@ -1,17 +1,18 @@
 import React from "react";
 import sunny from "./sunny.png";
 
-const SquareWidget = ({ color, name}) => {
+const SquareWidget = ({ name}) => {
   return (
     <div
       style={{
         width: "120px",
         height: "120px",
-        backgroundColor: color,
+        backgroundColor: "whitesmoke",
         margin: "10px",
+        borderRadius:"20px"
       }}
     >
-      {name}
+      <text>{name}</text>
       <img src={sunny} alt="Sunny" style={{ width: 100 }} />
     </div>
   );
