@@ -1,12 +1,13 @@
-import React from 'react'
-import Searchbar from './Searchbar'
+import React from 'react';
+import Searchbar from './Searchbar';
 
-const Header = () => {
+const Header = ({ onLocationSelect }) => {
+
   return (
     <header>
-        <Searchbar/>
+      <Searchbar onLocationSelect={onLocationSelect}/>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

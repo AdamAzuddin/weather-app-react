@@ -2,7 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Weather from "./components/Weather";
 import SquareWidgets from "./components/SquareWidgets";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function App() {
   const [selectedLocation, setSelectedLocation] = useState("New York");
@@ -12,10 +12,10 @@ function App() {
   };
 
   return (
-    <div className="App" >
-      <Header/>
+    <div className="App">
+      <Header onLocationSelect={handleLocationSelect} />
       <Weather name={selectedLocation} />
-      <SquareWidgets onLocationSelect={handleLocationSelect}/>
+      <SquareWidgets onLocationSelect={handleLocationSelect} />
     </div>
   );
 }
