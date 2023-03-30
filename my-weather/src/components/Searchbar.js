@@ -1,12 +1,147 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const Searchbar = () => {
+const cityList = [
+  "New York",
+  "Los Angeles",
+  "Chicago",
+  "Houston",
+  "Phoenix",
+  "Philadelphia",
+  "San Antonio",
+  "San Diego",
+  "Dallas",
+  "San Jose",
+  "Austin",
+  "Jacksonville",
+  "Fort Worth",
+  "Columbus",
+  "San Francisco",
+  "Charlotte",
+  "Indianapolis",
+  "Seattle",
+  "Denver",
+  "Washington DC",
+  "Boston",
+  "Nashville",
+  "El Paso",
+  "Detroit",
+  "Memphis",
+  "Portland",
+  "Oklahoma City",
+  "Las Vegas",
+  "Louisville",
+  "Baltimore",
+  "Milwaukee",
+  "Albuquerque",
+  "Tucson",
+  "Fresno",
+  "Mesa",
+  "Sacramento",
+  "Atlanta",
+  "Kansas City",
+  "Colorado Springs",
+  "Miami",
+  "Raleigh",
+  "Omaha",
+  "Long Beach",
+  "Virginia Beach",
+  "Oakland",
+  "Minneapolis",
+  "Tulsa",
+  "Wichita",
+  "New Orleans",
+  "Arlington",
+];
+
+const SearchBar = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
+  const handleSearch = (event) => {
+    const value = event.target.value.toLowerCase();
+    setSearchTerm(value);
+
+    // Sample data for demonstration purposes
+    const cities = [
+      "New York",
+      "Los Angeles",
+      "Chicago",
+      "Houston",
+      "Phoenix",
+      "Philadelphia",
+      "San Antonio",
+      "San Diego",
+      "Dallas",
+      "San Jose",
+      "Austin",
+      "Jacksonville",
+      "Fort Worth",
+      "Columbus",
+      "San Francisco",
+      "Charlotte",
+      "Indianapolis",
+      "Seattle",
+      "Denver",
+      "Washington DC",
+      "Boston",
+      "Nashville",
+      "El Paso",
+      "Detroit",
+      "Memphis",
+      "Portland",
+      "Oklahoma City",
+      "Las Vegas",
+      "Louisville",
+      "Baltimore",
+      "Milwaukee",
+      "Albuquerque",
+      "Tucson",
+      "Fresno",
+      "Mesa",
+      "Sacramento",
+      "Atlanta",
+      "Kansas City",
+      "Colorado Springs",
+      "Miami",
+      "Raleigh",
+      "Omaha",
+      "Long Beach",
+      "Virginia Beach",
+      "Oakland",
+      "Minneapolis",
+      "Tulsa",
+      "Wichita",
+      "New Orleans",
+      "Arlington",
+    ];
+
+    // Filter the cities based on the search term
+    const filteredCities = cities.filter((city) =>
+      city.toLowerCase().startsWith(value)
+    );
+
+    setSuggestions(filteredCities);
+  };
+
   return (
     <div>
-        <input type="text" placeholder='Search for towns...'/>
-        <button>Search</button>
-    </div>
-  )
-}
+      <input
+        type="text"
+        placeholder="Search for a city"
+        onChange={handleSearch}
+      />
 
-export default Searchbar
+      {suggestions.length > 0 && (
+        <ul style={{ paddingRight: "100px", paddingLeft: "100px" }}>
+          {suggestions.map((city) => (
+            <li key={city} style={{ backgroundColor: "whitesmoke" }}>
+              {city}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export default SearchBar;
