@@ -13,7 +13,7 @@ const SquareWidget = ({ name, onClick }) => {
       }}
       onClick={onClick}
     >
-      <text>{name}</text>
+      <div>{name}</div>
       <img src={sunny} alt="Sunny" style={{ width: 100 }} />
     </div>
   );
