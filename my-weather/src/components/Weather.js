@@ -1,11 +1,12 @@
 import React from 'react'
 import sunny from './sunny.png'
 
-const Weather = () => {
+const Weather = ({name}) => {
   return (
-    <div>
-        <img src={sunny} alt='Sunny' style={{width
-        :100}}/>
+    <div style={{ backgroundColor: 'whitesmoke', height: '200px', width:'300', margin: '50px'}}>
+       <h1>
+        {name}
+       </h1>
     </div>
   )
 }

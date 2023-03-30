@@ -2,7 +2,6 @@ import React from "react";
 import SquareWidget from "./SquareWidget";
 import ScrollContainer from "react-indiana-drag-scroll";
 
-
 const names = [
   "New York",
   "Kuala Lumpur",
@@ -14,11 +13,13 @@ const names = [
   "Bangkok",
   "London",
   "Doha",
-  
-  
 ];
 
-const SquareWidgets = () => {
+const SquareWidgets = ({ onLocationSelect }) => {
+  const handleClick = (name) => {
+    onLocationSelect(name);
+  };
+
   return (
     <ScrollContainer>
       <div
@@ -29,12 +30,16 @@ const SquareWidgets = () => {
           width: "200%",
           scrollbarWidth: "none",
           scrollbars: "0",
-          marginTop:'50px'
+          marginTop: "50px",
         }}
         className="example"
       >
-        {names.map((name, index ,) => (
-          <SquareWidget key={index}  name={name}/>
+        {names.map((name, index) => (
+          <SquareWidget
+            key={index}
+            name={name}
+            onClick={() => handleClick(name)}
+          />
         ))}
       </div>
     </ScrollContainer>
