@@ -90,7 +90,7 @@ const SearchBar = ({ onLocationSelect }) => {
           {suggestions.map((city) => (
             <li
               key={city}
-              style={{ backgroundColor: "whitesmoke", cursor: "pointer" }}
+              style={{ backgroundColor: "whitesmoke", cursor: "pointer", border:"black" }}
               onClick={() => handleSelect(city)}
             >
               {city}
