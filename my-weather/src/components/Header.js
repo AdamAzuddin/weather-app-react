@@ -5,6 +5,7 @@ const Header = ({ onLocationSelect }) => {
 
   return (
     <header>
+      <div>SkyCast</div>
       <Searchbar onLocationSelect={onLocationSelect}/>
     </header>
   );

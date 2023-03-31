@@ -83,6 +83,7 @@ const SearchBar = ({ onLocationSelect }) => {
         placeholder="Search for a city"
         value={searchTerm}
         onChange={handleSearch}
+        style={{marginTop:'10px'}}
       />
 
       {suggestions.length > 0 && (
