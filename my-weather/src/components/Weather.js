@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import sunny from "./sunny.png";
 import axios from "axios";
 
-const Weather = ({ name ,setWeatherData, weatherData}) => {
+const Weather = ({ name }) => {
+  const [weatherData, setWeatherData] = useState(null);
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
@@ -12,8 +14,8 @@ const Weather = ({ name ,setWeatherData, weatherData}) => {
       setWeatherData(res.data);
     };
     fetchData();
-  }, []);
-  
+  }, [name]);
+
   return (
     <div
       style={{
@@ -27,15 +29,12 @@ const Weather = ({ name ,setWeatherData, weatherData}) => {
     >
       {weatherData && (
         <div>
-          
-          <h1>{name}</h1>
           <img src={sunny} alt="Sunny" style={{ width: "100px" }} />
           <h2>{weatherData.name}</h2>
           <h2>Current temperature: {weatherData.main.temp}</h2>
           <h2>Weather description: {weatherData.weather[0].description}</h2>
         </div>
       )}
-      
     </div>
   );
 };

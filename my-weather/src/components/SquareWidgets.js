@@ -38,7 +38,7 @@ const SquareWidgets = ({ onLocationSelect }) => {
           <SquareWidget
             key={index}
             name={name}
-            onClick={() => handleClick(name)}
+            onLocationSelect={() => handleClick(name)}
           />
         ))}
       </div>

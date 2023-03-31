@@ -1,7 +1,7 @@
 import React from "react";
 import sunny from "./sunny.png";
 
-const SquareWidget = ({ name, onClick }) => {
+const SquareWidget = ({ name, onLocationSelect }) => {
   return (
     <div
       style={{
@@ -11,7 +11,7 @@ const SquareWidget = ({ name, onClick }) => {
         margin: "10px",
         borderRadius: "20px",
       }}
-      onClick={onClick}
+      onClick={() => onLocationSelect(name)}
     >
       <div>{name}</div>
       <img src={sunny} alt="Sunny" style={{ width: 100 }} />
