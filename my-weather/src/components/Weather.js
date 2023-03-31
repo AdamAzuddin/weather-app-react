@@ -29,7 +29,6 @@ const Weather = ({ name }) => {
     >
       {weatherData && (
         <div>
-          <img src={sunny} alt="Sunny" style={{ width: "100px" }} />
           <h2>{weatherData.name}</h2>
           <h2>Current temperature: {weatherData.main.temp}</h2>
           <h2>Weather description: {weatherData.weather[0].description}</h2>

@@ -27,6 +27,9 @@ function App() {
     fetchData();
   }, [selectedLocation]);
 
+
+  
+
   return (
     <div className="App">
       <Header onLocationSelect={handleLocationSelect} />

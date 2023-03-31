@@ -8,11 +8,11 @@ const names = [
   "Bangkok",
   "London",
   "Doha",
-  "New York",
-  "Kuala Lumpur",
-  "Bangkok",
-  "London",
-  "Doha",
+  "Paris",
+  "Texas",
+  "Moscow",
+  "Delhi",
+  "Mecca",
 ];
 
 const SquareWidgets = ({ onLocationSelect }) => {
