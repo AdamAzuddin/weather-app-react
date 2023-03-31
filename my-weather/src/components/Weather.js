@@ -30,7 +30,7 @@ const Weather = ({ name }) => {
       {weatherData && (
         <div>
           <h2>{weatherData.name}</h2>
-          <h2>Current temperature: {weatherData.main.temp}</h2>
+          <h2>Current temperature: {weatherData.main.temp} K</h2>
           <h2>Weather description: {weatherData.weather[0].description}</h2>
         </div>
       )}
