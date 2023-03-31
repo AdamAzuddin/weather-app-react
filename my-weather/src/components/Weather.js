@@ -2,21 +2,18 @@ import React, { useState, useEffect } from "react";
 import sunny from "./sunny.png";
 import axios from "axios";
 
-const Weather = ({ name }) => {
-  const [weatherData, setWeatherData] = useState(null);
-
-  const API_KEY = "728aa78f35ceb1acb144f937f063bb4c";
-
+const Weather = ({ name ,setWeatherData, weatherData}) => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=728aa78f35ceb1acb144f937f063bb4c`
       );
 
       setWeatherData(res.data);
     };
     fetchData();
   }, []);
+  
   return (
     <div
       style={{
@@ -30,6 +27,7 @@ const Weather = ({ name }) => {
     >
       {weatherData && (
         <div>
+          
           <h1>{name}</h1>
           <img src={sunny} alt="Sunny" style={{ width: "100px" }} />
           <h2>{weatherData.name}</h2>
