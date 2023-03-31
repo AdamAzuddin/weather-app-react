@@ -607,7 +607,7 @@ const SearchBar = ({ onLocationSelect }) => {
       "Chefchaouen",
       "Fez",
       "Gibraltar",
-      "Algiers"
+      "Algiers",
     ];
 
     // Filter the cities based on the search term
@@ -635,7 +635,14 @@ const SearchBar = ({ onLocationSelect }) => {
       />
 
       {suggestions.length > 0 && (
-        <ul style={{ paddingRight: "100px", paddingLeft: "100px" }}>
+        <ul
+          style={{
+            marginRight:'100px',
+            marginLeft:'100px',
+            height: "100px",
+            overflowY: "scroll",
+          }}
+        >
           {suggestions.map((city) => (
             <li
               key={city}
@@ -643,6 +650,7 @@ const SearchBar = ({ onLocationSelect }) => {
                 backgroundColor: "whitesmoke",
                 cursor: "pointer",
                 border: "black",
+                listStyleType: "none",
               }}
               onClick={() => handleSelect(city)}
             >
